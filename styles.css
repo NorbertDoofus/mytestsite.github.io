@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #112162;
+    margin: 0;
+}
+
+.quiz-container {
+    text-align: center;
+    max-width: 800px;
+    width: 90%; /* Увеличиваем ширину для мобильных устройств */
+    padding: 20px; /* Добавляем внутренние отступы */
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 10px; /* Добавляем скругления углов */
+    background-color: #ffffff; /* Задаем цвет фона для контейнера */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.question {
+    color: black; /* Цвет текста вопроса */
+    font-size: 1.5em; /* Размер шрифта для вопроса */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.options {
+    display: flex;
+    flex-direction: column; /* Изменяем на вертикальное направление для мобильных */
+    align-items: center; /* Центрируем элементы */
+}
+
+.option {
+    background-color: #f0f0f0; /* Цвет фона для вариантов */
+    padding: 15px; /* Увеличиваем отступы для вариантов */
+    border-radius: 10px; /* Скругляем углы для вариантов */
+    font-size: 1.2em; /* Увеличиваем размер шрифта для вариантов */
+    margin: 10px 0; /* Отступы между вариантами */
+    width: 100%; /* Задаем ширину 100% для мобильных устройств */
+    max-width: 300px; /* Максимальная ширина для больших экранов */
+    cursor: pointer; /* Указываем, что элемент кликабельный */
+    border: 2px solid #ccc; /* Добавляем рамку для вариантов */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход для фона и цвета рамки */
+}
+
+.option:hover {
+    border-color: #ff7d35; /* Изменяем цвет рамки при наведении */
+}
+
+.option.correct {
+    background-color: green; /* Цвет правильного ответа */
+    color: white; /* Цвет текста для контраста */
+    border-color: green; /* Цвет рамки для правильного ответа */
+}
+
+.option.incorrect {
+    background-color: red; /* Цвет неправильного ответа */
+    color: white; /* Цвет текста для контраста */
+    border-color: red; /* Цвет рамки для неправильного ответа */
+}
+
+.text-input {
+    width: 100%; /* Задаем ширину текстового поля 100% */
+    max-width: 300px; /* Максимальная ширина для текстового поля */
+    padding: 10px; /* Добавляем отступы */
+    border-radius: 5px; /* Скругляем углы */
+    border: 1px solid #ccc; /* Добавляем границу */
+    font-size: 1.2em; /* Увеличиваем размер шрифта для текста */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.submit-btn {
+    padding: 10px 20px; /* Увеличиваем отступы для кнопки */
+    font-size: 1.2em; /* Увеличиваем размер шрифта для кнопки */
+    border-radius: 5px; /* Скругляем углы кнопки */
+    border: none; /* Убираем границу */
+    background-color: #ff7d35; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    cursor: pointer; /* Указываем, что элемент кликабельный */
+}
+
+.feedback {
+    font-size: 1.2em; /* Увеличиваем размер шрифта для обратной связи */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 20px; /* Добавляем отступы для мобильных устройств */
+        margin: 0 10px; /* Отступы по бокам */
+    }
+
+    .question {
+        font-size: 1.3em; /* Уменьшаем размер шрифта для вопросов */
+    }
+
+    .option {
+        font-size: 1em; /* Уменьшаем размер шрифта для вариантов */
+    }
+
+    .text-input,
+    .submit-btn {
+        font-size: 1em; /* Уменьшаем размер шрифта для ввода и кнопки */
+    }
+
+    .feedback {
+        font-size: 1em; /* Уменьшаем размер шрифта для обратной связи */
+    }
+}
